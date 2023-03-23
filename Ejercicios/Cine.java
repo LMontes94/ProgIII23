@@ -8,7 +8,7 @@ public class Cine {
         return pelicula;
     }
 
-    public void setPatente(String pelicula){
+    public void setPelicula(String pelicula){
        this.pelicula = pelicula;
     }
 
@@ -18,5 +18,12 @@ public class Cine {
 
     public void setHorario(String horario){
        this.horario = horario;
+    }
+
+    public void obtenerCartelera() {
+        this.getHorario();
+        this.getPelicula();
+        System.out.println("Pelicula: " + this.getPelicula());
+        System.out.println("Horario: " + this.getHorario());
     }
 }
