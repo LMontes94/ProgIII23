@@ -4,8 +4,9 @@ public class main {
 
     public static void main(String[] args) {
         System.out.println("Hola Mundo");
-
-        System.out.println("-------Ejercicio 1 --------------");
+        int cont = 0;
+        separador(cont);
+        cont++;
         /*
          * Crear una clase Persona que tenga los atributos públicos nombre y apellido.
          * ● Crear una instancia y asignarle valores.
@@ -18,7 +19,8 @@ public class main {
         System.out.println(lucas.nombre + " " + lucas.apellido);
         System.out.println(maria.nombre + " " + maria.apellido);
 
-        System.out.println("-------Ejercicio 2 --------------");
+        separador(cont);
+        cont++;
         /*
          * Crear una clase Vehiculo que tenga los atributos públicos marca, modelo y un
          * atributo privado
@@ -37,7 +39,8 @@ public class main {
         System.out.println("Modelo: " + auto1.modelo);
         System.out.println("Patente: " + auto1.getPatente());
 
-        System.out.println("-------Ejercicio 3 --------------");
+        separador(cont);
+        cont++;
         /*
          * Crear una clase Articulo que tenga los atributos privados marca y modelo.
          * ● Crear métodos públicos para la asignación de valores.
@@ -53,7 +56,8 @@ public class main {
         System.out.println("Marca: " + articulo1.getMarca());
         System.out.println("Modelo: " + articulo1.getModelo());
 
-        System.out.println("-------Ejercicio 4 --------------");
+        separador(cont);
+        cont++;
         /*
          * 4. Crear una clase Cine que tenga los atributos privados película y horario:
          * ● Crear métodos públicos para la asignación y recuperación de valores.
@@ -71,7 +75,8 @@ public class main {
         System.out.println("---- Cartelera ----");
         cine1.obtenerCartelera();
 
-        System.out.println("-------Ejercicio 5 --------------");
+        separador(cont);
+        cont++;
         /*
          * Crear una clase Cine que tenga los atributos privados película y horario.
          * ● Crear métodos públicos para la asignación y recuperación de valores.
@@ -105,8 +110,61 @@ public class main {
         System.out.println("Pelicula: " + cinemax.getPelicula());
         System.out.println("Horario: " + cinemax.getHorario());
 
-        System.out.println("-------Ejercicio 6 --------------");
-      
+        separador(cont);
+        cont++;
+        /*
+         * Crear una clase Fruta con variables privadas color, peso, esEstacional.
+         * ● Crear setters y getters.
+         * ● Escribir una función llamada esComestible() que devuelva verdadero cuando
+         * la fruta pesa menos de 200 gr y es de estación, y falso en cualquier otro
+         * caso.
+         * ● Definir dos constructores de modo tal que la fruta pueda crearse con los
+         * valores
+         * color, peso y estacional al momento de instanciarse, o bien crearse sin
+         * valores
+         * iniciales.
+         */
+
+        Fruta manzana = new Fruta();
+        manzana.setColor("Roja");
+        manzana.setPeso(50);
+        manzana.setEsEstacional(true);
+
+        Fruta sandia = new Fruta("Verde", 201, true);
+        sandia.esComestible(sandia.esComestible(sandia.getPeso(), sandia.getEsEstacional()));
+        System.out.println(manzana.esComestible(manzana.getPeso(), manzana.getEsEstacional()));
+
+        separador(cont);
+        cont++;
+
+        /*
+         * 7. Crear una clase Ninja con las variables privadas arteMarcial, arma, fuerza
+         * (entero) y salto
+         * (entero).
+         * ● Crear setters y getters manualmente.
+         * ● Crear una función saltar() que reciba un parámetro multiplicador (entero);
+         * imprimir por consola salto x parámetro.
+         * ● Crear la función ataque() que imprima por consola el arma que usa el ninja
+         * y el arte marcial.
+         * ● Crear dos instancias de Ninja, asignar distintos valores para cada uno de
+         * los atributos e invocar las funciones saltar() y ataque().
+         */
+         
+         Ninja naruto = new Ninja("Capoeira", "Kunai", 180, 85);
+         Ninja sasuke = new Ninja("Kung Fu", "Shuriken", 175, 101);
+
+         naruto.ataque();
+         naruto.saltar(2);
+
+         sasuke.ataque();
+         sasuke.saltar(3);
+
+    }
+
+    private static void separador(int num) {
+        System.out.println();
+        System.out.println("-------Ejercicio" + num + "--------------");
+        System.out.println();
     }
 
 }
