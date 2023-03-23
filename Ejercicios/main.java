@@ -85,27 +85,28 @@ public class main {
          * objetos distintos.
          */
 
-         Cine cinemax = new Cine();
-         cinemax.setPelicula("Toy Story 4");
-         cinemax.setHorario("15:40 hs");
-         
-         System.out.println("Pelicula: " + cinemax.getPelicula());
-         System.out.println("Horario: " + cinemax.getHorario());
+        Cine cinemax = new Cine();
+        cinemax.setPelicula("Toy Story 4");
+        cinemax.setHorario("15:40 hs");
 
-         Cine hoyts = new Cine();
-         hoyts.setPelicula("Terminator 10");
-         hoyts.setHorario("21:00 hs");
+        System.out.println("Pelicula: " + cinemax.getPelicula());
+        System.out.println("Horario: " + cinemax.getHorario());
 
-         System.out.println("Pelicula: " + hoyts.getPelicula());
-         System.out.println("Horario: " + hoyts.getHorario());
+        Cine hoyts = new Cine();
+        hoyts.setPelicula("Terminator 10");
+        hoyts.setHorario("21:00 hs");
 
-         cinemax.setPelicula("Rocky 15");
-         cinemax.setHorario("23:20 hs");
+        System.out.println("Pelicula: " + hoyts.getPelicula());
+        System.out.println("Horario: " + hoyts.getHorario());
 
-         System.out.println("Pelicula: " + cinemax.getPelicula());
-         System.out.println("Horario: " + cinemax.getHorario());
+        cinemax.setPelicula("Rocky 15");
+        cinemax.setHorario("23:20 hs");
 
-         System.out.println("-------Ejercicio 6 --------------");
+        System.out.println("Pelicula: " + cinemax.getPelicula());
+        System.out.println("Horario: " + cinemax.getHorario());
+
+        System.out.println("-------Ejercicio 6 --------------");
+      
     }
 
 }
