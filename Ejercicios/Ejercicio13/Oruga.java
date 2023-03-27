@@ -11,11 +11,11 @@ public class Oruga extends Traccion {
     public void setSensor(String sensor){
        this.sensor = sensor;
     }
-    
+
     public void cambiarRodado(int kmRecorridos){
         this.setRodado(400);
         if (this.calcularRodado(kmRecorridos) < 1) {
           System.out.println("Cambiar oruga urgente!!!!");
         }
-       }
+    }
 }
