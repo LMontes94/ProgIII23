@@ -1,0 +1,58 @@
+@startuml
+
+title **Figuras geometricas**
+
+abstract class FiguraGeometrica{
+  - nombre
+   - color
+
+   + getNombre() : String 
+   + setNombre(String): void 
+   + getColor(): String 
+   + setColor(String): void
+
+   +abstract calcularPerimetro(): Double
+   +abstract calcularArea(): Double
+}
+
+FiguraGeometrica <|-- Cuadrado
+FiguraGeometrica <|-- Circulo
+FiguraGeometrica <|-- Triangulo
+
+class Cuadrado{
+   
+   - lado
+
+   
+   + getLado(): Float
+   + getLado(Float): void 
+
+   +calcularPerimetro(): Float
+   +calcularArea(): Float
+
+}
+
+class Triangulo{
+  
+   - lado
+
+   + getLado(): Float 
+   + getLado(Float): void 
+
+   +calcularPerimetro(): Float
+   +calcularArea(): Float
+}
+
+class Circulo{
+   
+   - redio 
+
+   + getRadio(): Float
+   + getRadio(Float): void 
+
+   +calcularPerimetro(): Double
+   +calcularArea(): Double
+}
+
+
+@enduml
