@@ -1,0 +1,31 @@
+@startuml
+
+title ** Sueldo **
+
+class Empleado{
+    - categoria
+    - diasAusentes
+    - neto 
+
+    + getCategoria() : String
+    + setCategoria(String) : void
+    + getDiasAusentes() : Integer 
+    + setDiasAusentes(Integer) : void
+    + getNeto() : Double
+    + setNeto(Double) : void
+
+    + calcularPresentismo() : Double
+    + calcularBonoXResultado(): Double
+    + calcularSueldo(): Double
+}
+
+Empleado <|-- Gerente
+Empleado <|-- Cadetes
+
+class Gerente{
+
+}
+
+class Cadetes{
+
+}

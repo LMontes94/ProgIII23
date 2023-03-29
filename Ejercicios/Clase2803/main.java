@@ -23,8 +23,18 @@ public class main {
         System.out.println("Perimetro del circulo: " + circulo.calcularPerimetro());
         System.out.println("Area del circulo: " + circulo.calcularArea());
 
+        int cont = 2;
+        separador(cont);
+        cont++;
 
-
+        
 
     }
+
+    private static void separador(int num) {
+        System.out.println();
+        System.out.println("-------Ejercicio" + num + "--------------");
+        System.out.println();
+    }
+
 }
