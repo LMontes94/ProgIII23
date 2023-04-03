@@ -5,16 +5,16 @@ public class Sueldo {
     private Resultado r;
     
     public Double presentismo(Integer ausente){
-        return p.calcularPresentismo(ausente);
+        return this.p.calcularPresentismo(ausente);
     }
 
     public Double bonoXResultado(Double neto){
         if(r.getOpcion() == 1){
-            return r.calcularBonoXPorcenje(neto);
+            return this.r.calcularBonoXPorcenje(neto);
         }
 
         if (r.getOpcion() == 2) {
-            return r.calcularBonoFijo(neto);
+            return this.r.calcularBonoFijo(neto);
         }
         return 0.0;
     }

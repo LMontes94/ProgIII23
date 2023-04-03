@@ -1,6 +1,6 @@
-package Ejercicios.Clase2803; 
+package Ejercicios.Clase2803.Ejercicio_Figuras;
 
- public class Circulo extends FiguraGeometrica{
+public class Circulo extends FiguraGeometrica{
     private Integer radio;
 
     public Integer getRadio(){

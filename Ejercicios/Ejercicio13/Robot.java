@@ -19,12 +19,12 @@ public class Robot {
 
     public int calcularPotencia(int potencia){
         
-        if (this.traccion.getTipoTraccion() == "Rueda") {
-            this.traccion.setPotencia(1);
-            return this.potencia - this.traccion.getPotencia();
+        if (this.traccion.getEntorno() == "Rueda") {
+            this.traccion.setHp(1);
+            return this.potencia - this.traccion.getHp();
         }else{
-            this.traccion.setPotencia(3);
-            return this.potencia - this.traccion.getPotencia();
+            this.traccion.setHp(3);
+            return this.potencia - this.traccion.getHp();
         }
     }
 

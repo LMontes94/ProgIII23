@@ -1,0 +1,38 @@
+@startuml
+
+title **Ejercicio 13 **
+
+class Robot{
+   - nroSerie
+   - potencia
+   - SistemaTraccion
+
+   + getNroSerie(): String  
+   + setNroSerie(String): void
+   + getPtencia(): Integer 
+   + setPotencia(Integer): void
+
+
+}
+
+Robot <-- SistemaTraccion
+
+abstract SistemaTraccion{
+   - entorno 
+   - hp 
+   - rodado
+
+
+}
+
+class RuedaCaucho extends SistemaTraccion{
+     
+}
+
+class Oruga extends SistemaTraccion{
+   - sensor 
+
+   + getSensor() : String
+   + setSensor(String) : void
+}
+@enduml

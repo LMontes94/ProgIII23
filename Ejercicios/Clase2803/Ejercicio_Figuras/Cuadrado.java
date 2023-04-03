@@ -1,4 +1,4 @@
-package Ejercicios.Clase2803;
+package Ejercicios.Clase2803.Ejercicio_Figuras;
 
 
 public class Cuadrado {

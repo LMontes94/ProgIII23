@@ -1,4 +1,4 @@
-package Ejercicios;
+package Ejercicios.Ejercicio1al12;
 
 public class Fruta {
     private String color;

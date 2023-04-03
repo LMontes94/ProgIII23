@@ -1,16 +1,16 @@
 package Ejercicios.Ejercicio13;
 
 public abstract class Traccion {
-    private String tipoTraccion;
+    private String entorno;
     private int rodado;
-    private int potencia;
+    private int hp;
     
-    public String getTipoTraccion(){
-      return tipoTraccion;
+    public String getEntorno(){
+      return entorno;
     }
 
-    public void setTipoTraccion(String tipoTraccion){
-       this.tipoTraccion = tipoTraccion;
+    public void setEntorno(String tipoTraccion){
+       this.entorno = tipoTraccion;
     }
 
     public int getRodado(){
@@ -21,12 +21,12 @@ public abstract class Traccion {
        this.rodado = rodado;
     }
 
-    public int getPotencia(){
-      return potencia;
+    public int getHp(){
+      return hp;
     }
 
-    public void setPotencia(int potencia){
-      this.potencia = potencia;
+    public void setHp(int potencia){
+      this.hp = potencia;
     }
 
     public int calcularRodado(int kmRecorridos){

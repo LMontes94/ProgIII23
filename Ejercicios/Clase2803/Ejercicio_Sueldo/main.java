@@ -16,7 +16,8 @@ public class main {
         Pepe.setDiasAusentes(6);
         
         CalculadorSueldo Cs = new CalculadorSueldo();
-        Double sueldoF = Cs.calcularSueldo(Pepe);
+        Sueldo sueldo = new Sueldo();
+        Double sueldoF = Cs.calcularSueldo(Pepe,sueldo);
 
         System.out.println(sueldoF);
     }
