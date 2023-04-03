@@ -3,24 +3,29 @@
 title ** Sueldo **
 
 class Empleado{
+    - nombre
+    - apellido
+    - legajo
     - categoria
     - diasAusentes
-    - neto 
-
+    - Sueldo
+    
+    + getNombre() : String
+    + setNombre(String): void
+    + getApellido() : String
+    + setApellido(String) : void
+    + getLegajo(): String
+    + setLegajo(String): void
     + getCategoria() : String
     + setCategoria(String) : void
     + getDiasAusentes() : Integer 
-    + setDiasAusentes(Integer) : void
-    + getNeto() : Double
-    + setNeto(Double) : void
-
-    + calcularPresentismo() : Double
-    + calcularBonoXResultado(): Double
-    + calcularSueldo(): Double
+    + setDiasAusentes(Integer) : void  
+    
 }
 
 Empleado <|-- Gerente
 Empleado <|-- Cadetes
+Empleado <-- Sueldo
 
 class Gerente{
 
@@ -29,3 +34,35 @@ class Gerente{
 class Cadetes{
 
 }
+
+class Sueldo{
+    - neto
+
+    + getNeto() : Double
+    + setNeto(Double) : void
+}
+
+Class Presentismo{
+    - bono 
+
+    + getBono(): Integer
+    + setBono(Integer): void
+    + calcularPresentismo() : Double
+}
+
+class Resultados{
+    - opcion
+
+    + getOpcion(): Integer
+    + setOpcion(Integer): void
+    + calcularBonoXResultado(): Double
+}
+
+class CalculadorSueldo{
+   
+   + calcularSueldo(Empleado) : Double
+}
+
+Sueldo <-- CalculadorSueldo
+Sueldo <-- Presentismo
+Sueldo <-- Resultados
