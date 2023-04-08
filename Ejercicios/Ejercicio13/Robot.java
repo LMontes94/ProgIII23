@@ -16,7 +16,7 @@ public class Robot {
     public int getPotencia(){
       return potencia;
     }
-
+    
     public int calcularPotencia(int potencia){
         
         if (this.traccion.getEntorno() == "Rueda") {
@@ -27,5 +27,5 @@ public class Robot {
             return this.potencia - this.traccion.getHp();
         }
     }
-
+  
 }

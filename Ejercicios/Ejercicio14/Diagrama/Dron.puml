@@ -1,0 +1,47 @@
+@startuml
+
+title ** Ejercicio 14 **
+
+class Dron{
+   - peso
+   - altura
+   - velocidad
+
+   + getPeso() : Double
+   + setPeso(Double) : void
+   + getAltura() : Double
+   + setAltura(Double) : void
+   + getVelocidad() : Double
+   + setVelocidad(Double) : void
+
+   + alturaFinal() : Double
+   + velocidadFinal() : Double
+}
+
+Dron o-- Herramienta
+
+Class Herramienta{
+   - peso 
+
+   + getPeso() : Double
+   + setPeso(Double) : void
+
+}
+
+Herramienta <|-- Sensor_Infrarrojo
+Herramienta <|-- Taser
+Herramienta <|-- Brazo_Robotico
+
+class Sensor_Infrarrojo{
+
+}
+
+class Taser{
+
+}
+
+class Brazo_Robotico{
+
+}
+
+@enduml
