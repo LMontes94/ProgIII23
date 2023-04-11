@@ -1,0 +1,50 @@
+@startuml
+
+title ** Flota de navios **
+
+abstract class navio{
+   - nombre
+   - flotabilidad
+   - estabilidad
+
+   + getNombre(): String 
+   + setNombre(String): void
+}
+
+navio <|-- navioDeGuerra
+navio <|-- barcoHospital
+navio <|-- lancha
+
+abstract class navioDeGuerra{
+   - potenciaDeFuego
+   - velCrucero
+   - solidez
+
+}
+
+navioDeGuerra <|-- acorazado
+navioDeGuerra <|-- destructor
+
+class acorazado{
+   - blindaje
+}
+
+class destructor{
+
+}
+
+class barcoHospital{
+   - maxCapacidad
+}
+
+class lancha{
+   - motor 
+
+}
+
+lancha o-- grua 
+
+class grua{
+    - maxPeso
+}
+@enduml
