@@ -1,0 +1,69 @@
+@startuml
+
+title ** ACME S.A.**
+
+Class micro{
+   - maxSentados 
+   - maxParados 
+   - volumen
+   - empleado : <ArrayList>Empleado
+
+   + getMaxSentados(): Integer  
+   + setMaxSentados(Integer): void
+   + getMaxParados(): Integer
+   + setMaxParados(Integer): void
+   + getVolumen(): Double
+   + setVolumen(Double): void
+   + getEmpleado(): Empleado
+   + setEmpleado(Empleado): void
+
+   + hayLugar(): boolean
+   + asientosLibres() : Integer
+   + espacioParado(): Integer  
+
+}
+
+Class Empleado{
+    - nombre
+    - esJefe
+    
+    + getNombre(): String 
+    + setNombre(String): void
+    + setEsJefe(boolean): void
+    + esJefe(): boolean
+    + subirAlMicro(Micro): void
+    + bajarDelMicro(Micro): void
+}
+
+Empleado <|-- Apurado
+Empleado <|-- Claustrofobico
+Empleado <|-- Fiaca
+Empleado <|-- Moderado
+Empleado <|-- Obsecuente
+
+Class Apurado{
+
+}
+
+Class Claustrofobico{
+   + volumenMicroMas120(Micro): void
+}
+
+Class Fiaca{
+   + mePuedoSentar(Micro): void
+}
+
+Class Moderado{
+   - xLugaresLibres
+
+   + getXLigaresLibres(): Integer
+   + setXLugaresLibres(Integer): void
+}
+
+Class Obsecuente{
+
+}
+
+
+
+@enduml
