@@ -6,7 +6,7 @@ Class micro{
    - maxSentados 
    - maxParados 
    - volumen
-   - empleado : <ArrayList>Empleado
+   - pasajero: <ArrayList>Empleado
 
    + getMaxSentados(): Integer  
    + setMaxSentados(Integer): void
