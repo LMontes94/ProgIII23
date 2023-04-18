@@ -1,0 +1,11 @@
+Se desea desarrollar una aplicación que permita conocer para un grupo de películas, cuál fue la película 
+que tuvo más visualizaciones. Una película posee: título, descripción, fecha de estreno, país de origen.
+Implementar el método Pelicula::visualizar de manera tal que incremente la cantidad de visualizaciones.
+
+1. Se pide crear 5 películas y mostrar aquella que obtuvo más puntaje. 
+
+El puntaje de una película se calcula utilizando la siguiente fórmula:
+puntaje = Entero más próximo (cantidad de visualizaciones * 1000 / cantidad de años desde su estreno)
+
+1. Emitir un listado de todas las películas ordenado de forma ascendente por cantidad de visualizaciones
+2. Emitir un listado de todas las películas ordenado de forma descendente por fecha de estreno.

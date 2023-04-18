@@ -1,0 +1,58 @@
+@startuml
+
+title ** Peliculas ** 
+
+class Pelicula{
+    - id
+    - titulo
+    - descripcion 
+    - fechaEstreno
+    - paisOrigen
+    - visualizaciones
+    
+    + getId(): Integer
+    + setId(Integer): void
+    + getTitulo(): String 
+    + setTitulo(String): void
+    + getDescripcion(): String
+    + setDescripcion(String): void
+    + getFechaEstreno(): Fecha 
+    + setFechaEstreno(Fecha): void
+    + getPaisOrigen(): String
+    + setPaisOrgien(String): void
+
+    + visualizar(): void 
+}
+
+Pelicula <-- Fecha 
+
+class Fecha{
+    - dia 
+    - mes 
+    - anio 
+
+    + getDia(): Integer 
+    + setDia(Integer): void
+    + getMes(): Integer
+    + setMes(Integer): void
+    + getAnio(): Integer 
+    + setAnio(Integer): void 
+
+    + toString(): String
+}
+
+class Puntaje{
+   
+   + calcularPuntaje(Pelicula): Double
+}
+
+interface Comparator <Pelicula> {
+   compare<Pelicula Pelicula>: Integer
+}
+
+Comparator <-- CriterioVisualizacion
+Comparator <-- CriterioFechaEstreno
+
+
+
+@enduml
