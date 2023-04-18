@@ -8,6 +8,14 @@ public class Pelicula {
     private String paisOrigen;
     private Integer visualizaciones;
     
+    public Pelicula(String t, String d, Fecha f, String pO, Integer v){
+       this.titulo = t;
+       this.descripcion = d;
+       this.setFechaEstreno(f);
+       this.paisOrigen = pO;
+       this.visualizaciones = v;
+    }
+
     public Integer getVisualizaciones() {
         return visualizaciones;
     }
@@ -55,13 +63,14 @@ public class Pelicula {
     public Double calcularPuntaje(){
        return (visualizaciones * 1000.0)/(2023 - fechaEstreno.getAnio());
     }
+
     public String toString(){
         return "Pelicula: "+ titulo+"\n"+
                "\tDescripcion: " + descripcion + "\n" +
-               "Fecha de estreno: " + fechaEstreno + "\n" +
-               "Pais de origen: " + paisOrigen + "\n" +
-               "Visualizaciones: " + visualizaciones + "\n" + 
-               "Puntaje: " + calcularPuntaje();
+               "\tFecha de estreno: " + fechaEstreno + "\n" +
+               "\tPais de origen: " + paisOrigen + "\n" +
+               "\tVisualizaciones: " + visualizaciones + "\n" + 
+               "\tPuntaje: " + calcularPuntaje();
 
     }
 }

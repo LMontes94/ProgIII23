@@ -4,7 +4,12 @@ public class Fecha {
     private Integer dia;
     private Integer mes;
     private Integer anio;
-
+    
+    public Fecha(int d,int m, int a){
+       this.dia = d;
+       this.mes = m;
+       this.anio = a;
+    }
     public Integer getDia() {
         return dia;
     }
