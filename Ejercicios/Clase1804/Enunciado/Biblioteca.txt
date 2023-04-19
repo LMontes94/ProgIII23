@@ -1,0 +1,18 @@
+Se desea implementar una aplicación que permita controlar por cuanto tiempo se pueden prestar los libros
+que posee una biblioteca.
+Para esto, la bibliotecaria nos comenta que clasificó los libros en libros de informática, filosofía,
+matemáticas, derecho y economía.
+La duración de los préstamos es la siguiente: los libros de informática y filosofía se prestan por dos
+semanas, los de matemática por 1 semana si tienen 1 capitulo y por 3 semanas si tienen dos o más
+capítulos; cualquier otro libro se presta por 5 semanas.
+La bibliotecaria debe poder consultar en cualquier momento cuantos libros tiene actualmente en la
+biblioteca y a quién prestó un determinado libro.
+Se pide:
+1. Crear el diagrama de clases, modelando todas las entidades que aparecen.
+2. Realizar una aplicación que permita, dado un libro, conocer por cuánto tiempo puede ser prestado.
+3. Extender la solución de forma tal que de un libro se pueda conocer si el mismo puede ser prestado o
+no. También debe poder responder cuántos días faltan para que finalice el préstamo respecto de la
+fecha actual.
+4. Agregar las entidades y métodos que crea necesarios de forma tal que se pueda consultar en
+cualquier momento cuantos libros tiene actualmente la biblioteca y a quién se prestó un libro
+determinado.

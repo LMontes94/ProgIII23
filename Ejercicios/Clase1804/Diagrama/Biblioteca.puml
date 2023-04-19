@@ -1,0 +1,81 @@
+@startuml
+
+title ** Biblioteca **
+
+abstract class Persona{
+    - nombre
+    - dni 
+
+    + getNombre(): String 
+    + setNombre(String): void
+    + getDni(): Integer 
+    + setDni(Integer): void
+}
+
+class Bibliotecaria{
+    - prestamo
+
+    + getPrestamo(): Prestamo 
+    + setPrestamo(Prestamo): void
+
+    + aquienSePrestoLibro(): Persona
+    + diasFinalizacionPrestamo(): Integer  
+}
+
+class Prestamo{
+   - idPrestamo
+   - libro
+   - estado
+   - personaPrestamo   
+   - fechaInicioPrestamo
+   - fechaFinPrestamo
+}
+
+Persona <|-- Cliente
+Persona <|-- Bibliotecaria
+Bibliotecaria <-- Prestamo
+Prestamo <-- Libro
+Prestamo <-- Cliente 
+Biblioteca <-- Libro
+Biblioteca <-- Bibliotecaria
+Cliente <-- Libro 
+
+class Cliente{
+   - id
+   - HashSet<Libros> librosAlquilados
+   
+   + getId(): Integer
+   + setId(Integer): void
+   + getLibrosAlquilados(): HashSet<Libros> 
+   + alquilarLibro(Libro):
+   + devolverLibros(Libro): void
+}
+
+class Biblioteca{
+   - bibliotecaria
+   - ArrayList<Libros> libros
+
+   + getBibliotecaria(): Bibliotecaria
+   + setBibliotecaria(Bibliotecaria): void 
+   + agregarLibro(Libro) : void
+   - consultarEstadoLibro(): void 
+   + getCantidadDeLibros(): Integer
+   + getCantLibrosDisponibles(): Integer
+   + equals(Obj): boolean
+
+}
+
+class Libro{
+    - titulo 
+    - autor     
+    - categoria
+    - capitulo   
+
+    + tiempoPrestamo(): void 
+}
+
+Libro <|-- Informatica 
+Libro <|-- Filosofia
+Libro <|-- Matematica
+
+@enduml

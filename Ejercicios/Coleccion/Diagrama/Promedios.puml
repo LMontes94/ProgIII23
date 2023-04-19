@@ -2,5 +2,17 @@
 
 title ** Promedios **
 
+class Alumno{
+   - nombreApellido
+   - edad 
+   - carrera 
+   - nota 
 
+   + getNombreApellido(): String 
+   + setNombreApellido(String): void 
+   + getCarrera(): Carrera
+   + setCarrera(Carrera): void
+    
+
+}
 @enduml
