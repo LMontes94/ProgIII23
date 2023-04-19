@@ -1,10 +1,12 @@
-Se desea desarrollar una aplicación que permita crear el perfil de un alumno con los siguientes datos:
+Se desea desarrollar una aplicación que permita crear el perfil de
+un alumno con los siguientes datos:
     Nombre y Apellido
     Edad
     Carrera que cursa
     Notas de sus materias
 Se pide:
-1. Para un alumno. cargar la cantidad de materias cursadas hasta ese momento y las notas de cada materia 
-con sus aplazos inclusive. Mostrar por pantalla Nombre completo, carrera que cursa y promedio.
+1. Para un alumno. cargar la cantidad de materias cursadas hasta
+   ese momento y las notas de cada materia con sus aplazos inclusive.
+   Mostrar por pantalla Nombre completo, carrera que cursa y promedio.
 2. Ampliar la solución anterior a más de 1 alumno.
 3. ¿Qué tipo de colección conviene utilizar? ¿Por qué?

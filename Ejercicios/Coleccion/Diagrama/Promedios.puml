@@ -3,16 +3,46 @@
 title ** Promedios **
 
 class Alumno{
-   - nombreApellido
-   - edad 
-   - carrera 
-   - nota 
+   - nombreApellido : String 
+   - edad : Integer 
+   - carrera: Carrera 
+   - notas : HashTable<Materia, ArrayList<Integer>>
 
    + getNombreApellido(): String 
-   + setNombreApellido(String): void 
-   + getCarrera(): Carrera
-   + setCarrera(Carrera): void
-    
-
+   + setNombreApellido(String): void
+   + getEdad(): Integer 
+   + setEdad(Integer): void 
+   + getCarrera(): Carrera 
+   + InscribirseCarrera(Carrera): void
+   + InscribirseMateria(Materia): void 
+   + cargarNota(Integer): void 
+   + getNotas(): HashTable<Integer, Materias>
 }
+
+class Carrera{
+   - codigo: Integer 
+   - nombre: String 
+   - materias: Hashset<Materia>
+
+   + getCodigo(): Integer 
+   + setCodigo(Integer): void
+   + getNombre(): String 
+   + setNombre(String): void 
+   + getMateria(): Hashset<Materias>
+   + setMateria(Hashset<Materias>): void
+}
+
+class Materia{
+   - codigo: Integer  
+   - nombre: String 
+   
+   + getCodigo(): Integer 
+   + setCodigo(Integer): void
+   + getNombre(): String 
+   + setNombre(String): void 
+}
+
+Alumno <-- Carrera
+Carrera <-- Materia 
+
 @enduml
