@@ -8,7 +8,7 @@ public class Alumno {
     private String nombreApellido;
     private Integer edad;
     private Carrera carrera;
-    private Hashtable<Materia, ArrayList<Integer>> notas;
+    private Hashtable<Materia, Nota> notas;
 
     public Integer getEdad() {
         return edad;
@@ -50,10 +50,33 @@ public class Alumno {
        }
     }
     
-    public void cargarNota(ArrayList<Integer> n, Materia k){
-       
-        this.notas.get(k);
-        this.notas.put(k,(n) );
+    public void cargarNota(Integer n, Materia k){
+       /* *
+        Nota nota = new Nota();
+        nota.add(n);
+        Hashtable <Integer, ArrayList<Integer>> tabla = new Hashtable<Integer,ArrayList<Integer>>();
+        ArrayList<Integer> notas = new ArrayList<>();
+
+        notas.add(12);
+        notas.add(15);
+        notas.add(16);
+        tabla.put(1, notas);
+        notas.add(13);
+        notas.add(16);
+        notas.add(20);
+        tabla.put(2, notas);
+        notas.add(15);
+        notas.add(25);
+        notas.add(35);
+        tabla.put(3, notas);
+
+        for (Enumeration<Integer> e = tabla.keys(); e.hasMoreElements(); ) {
+            int key = e.nextElement();
+            ArrayList<Integer>  valu = tabla.get(key);
+            valu.add(21);
+            System.out.println("Valor: "+ valu);
+        }
+    }*/
     }
 
     public void mostrarNotas(){

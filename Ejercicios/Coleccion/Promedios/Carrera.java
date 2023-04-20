@@ -36,4 +36,6 @@ public class Carrera {
         Carrera otra = (Carrera)obj;
         return this.codigo == otra.codigo;
     }
+
+    
 }
