@@ -7,6 +7,9 @@ public class Carrera {
     private String nombre; 
     private HashSet<Materia> materias;
     
+    public Carrera(){
+        this.materias = new HashSet<Materia>();
+    }
     public HashSet<Materia> getMaterias() {
         return materias;
     }
@@ -36,6 +39,12 @@ public class Carrera {
         Carrera otra = (Carrera)obj;
         return this.codigo == otra.codigo;
     }
+    
+    public void mostrarMaterias(){
 
+        for (Materia materia : materias) {
+            System.out.println(materia);
+        }
+    }
     
 }

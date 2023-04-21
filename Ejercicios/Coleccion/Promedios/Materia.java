@@ -1,10 +1,17 @@
 package Coleccion.Promedios;
 
+import java.util.Iterator;
+
 public class Materia {
     private Integer codigo;
     private String nombre;
     private boolean puedoCursar;
-
+    
+    public Materia(Integer c, String n, boolean pC){
+       this.codigo = c;
+       this.nombre = n;
+       this.puedoCursar = pC;
+    }
     public boolean isPuedoCursar() {
         return puedoCursar;
     }
@@ -33,5 +40,10 @@ public class Materia {
     public boolean equals(Object obj) {
         Materia otra = (Materia)obj;
         return this.codigo == otra.codigo;
+    }
+    
+    public String toString(){
+        return "Codigo: " + this.codigo +"\n" +
+               "Materia: " + this.nombre + "\n";
     }
 }
