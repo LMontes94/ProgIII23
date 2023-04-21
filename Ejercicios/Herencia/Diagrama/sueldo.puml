@@ -1,0 +1,70 @@
+@startuml
+
+title ** Sueldo **
+
+abstract class Empleado{
+    - nombre: String 
+    - legajo: Integer 
+    - faltas: Integer 
+    - sueldo: Sueldo 
+
+    + getNombre(): String 
+    + setNombre(String): void
+    + getLegajo(): Integer 
+    + setLegajo(Integer): void
+    + getFaltas(): Integer 
+    + setFaltas(Integer): void
+    + sueldoFijo(): void
+    + verSueldo(): void 
+}
+
+class Sueldo{
+     - mes : String 
+     - sueldoNeto: Double 
+     - bonoP : Bono 
+     - bonoR: Bono 
+
+     + getSueldoNeto(): Double
+     + setSueldoNeto(Double): void
+     + getBonoP(): Bono
+     + setBono(Bono): void
+     + getBonoR(): Bono;
+     + setBonoR(Bono): void
+
+     + calcularSueldo()
+}
+
+abstract class Bono{
+    - opcion: char
+    - valor: Integer
+    
+    + getOpcion(): Char 
+    + setOpcion(char): void
+    + getValor()
+    + setValor(Integer): void 
+}
+
+class Resultado{
+    
+    + calcularPorcentajeObj(): Double
+}
+
+class BonoA{
+   
+   + calcularPresentismo(): Double 
+}
+
+class BonoB{
+    + bonoFijo(): Integer
+}
+
+Empleado <|-- Gerente 
+Empleado <|-- Administrativo 
+Empleado <|-- Operador 
+Empleado <|-- Cadete 
+Empleado o-- Sueldo
+Sueldo o-- Bono
+Bono <|-- Resultado 
+Bono <|-- BonoA 
+Bono <|-- BonoB 
+@enduml
