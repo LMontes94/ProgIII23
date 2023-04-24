@@ -1,4 +1,4 @@
-package Ejercicios.Clase1804;
+package Clase1804;
 
 public class main {
     
