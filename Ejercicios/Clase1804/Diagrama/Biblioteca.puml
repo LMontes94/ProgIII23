@@ -2,5 +2,79 @@
 
 title ** Biblioteca **
 
+class Biblioteca{
+    - libros: ArrayList<Libro>
+    - cliente: ArrayList<Cliente>
+
+    + getLibros(): ArrayList<Libro>
+    + setLibros(ArrayLibro<Libro>): void
+    + getCliente(): ArrayList<Cliente>
+    + setCliente(ArrayLibro<Cliente>): void
+    
+    + verFechaDeDevolucion(): void
+    + verCantLibrosDisponibles(): void 
+    + tiempoPrestamoDelLibro(): void 
+    + BuscarclienteQueAlquiloLibro(String nombreLibro): Integer
+    + verClienteQueAlquiloLibro(Integer posLibro): void  
+}
+
+class Libro{
+    - nombre: String 
+    - autor: String 
+    - codLibro: Integer 
+    - cantCapitulo: Integer 
+    - fecha: Fecha
+    - estado: boolean 
+
+    + getNombre(): String
+    + setNombre(String): void
+    + getAutor(): String 
+    + setAutor(String): void
+    + getCodLibro(): Integer
+    + setCodLibro(Integer): void 
+    + getCantCapitulo(): Integer 
+    + setCantCapitulo(Integer): void
+    + getFecha(): Fecha 
+    + setFecha(Fecha): void
+    + getEstado(): boolean 
+    + setEstado(boolean): void
+}
+
+class Informatica{
+
+}
+
+class Filosofia{
+
+}
+
+class Matematica{
+
+}
+
+class Cliente{
+    - nombre: String 
+    - dni: Integer 
+    - nroCliente: Integer 
+    - libros: ArrayList<Libro>
+
+    + getNombre(): String 
+    + setNombre(String): void 
+    + getDni(): Integer 
+    + setDni(Integer): void
+    + getNroCliente(): Integer 
+    + setNroCliente(Integer): void 
+    + getLibros(): ArrayList<Libro>
+    + setLibros(ArrayLibro<Libro>): void
+
+    + alquilarLibro(): void 
+    + devolverLibro(): void 
+}
+
+Biblioteca o-- Libro
+Biblioteca o-- Cliente 
+Libro <|-- Filosofia 
+Libro <|-- Informatica 
+Libro <|-- Matematica 
 
 @enduml
