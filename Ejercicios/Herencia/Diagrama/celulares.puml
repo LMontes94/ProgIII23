@@ -1,0 +1,42 @@
+@startuml
+
+class Persona{
+    - nombre: String 
+    - edad: Integer
+    - celular: Celular 
+
+    + getCelular(): Celular 
+    + setCelular(Celular): void
+    + getNombre(): String 
+    + setNombre(String): void
+    + getEdad(): Integer 
+    + setEdad(Integer): void
+}
+
+abstract class Celular{
+   - marca: String 
+   - modelo: String 
+   - MAX_BATERIA : 5.0
+
+   + getMarca(): String
+   + setMarca(String): void 
+   + getModelo(): String 
+   + setMarca(String): void
+
+   + consultarBateria(): void 
+   + llamada(Double): void 
+}
+
+class Motorola{
+
+}
+
+class Iphone{
+   
+}
+
+Persona o-- Celular 
+Celular <|-- Motorola 
+Celular <|-- Iphone 
+
+@enduml
