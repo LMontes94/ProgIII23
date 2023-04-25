@@ -35,7 +35,7 @@ public class Fecha {
     }
     
     public String toString(){
-        return dia+"/"+mes+"/"+anio;
+        return anio+"/"+mes+"/"+dia;
     }
 
     public boolean equals(Object o){

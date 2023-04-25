@@ -1,7 +1,9 @@
 package Clase1804.Clases;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Libro {
     private String nombre;
@@ -83,9 +85,27 @@ public class Libro {
                 "Categoria: " + categoria;
 
     }
+    
+    protected LocalDate formatearFecha(){
+       DateTimeFormatter formateo = DateTimeFormatter.ISO_DATE;
+       return LocalDate.parse(this.fechaPrestamo.toString(), formateo);
+    }
 
-    public void fechaLimite(String fecha){
-        LocalDate fechaInicio = LocalDate.parse(fecha, DateTimeFormatter.ISO_LOCAL_DATE);
-        
+    protected LocalDate sumarSemanas(){
+        LocalDate fechaInicio = formatearFecha();
+        return fechaInicio.plusWeeks(5);  
+    }
+
+    public void fechaLimite(){
+        LocalDate fechaDevolucion = this.sumarSemanas();        
+        System.out.println( "La fecha limite es: " + fechaDevolucion);
+    }
+
+    public void diasRestantesDelPrestamo(){
+        LocalDate fechaInicio = formatearFecha();
+        LocalDate fechaDevolucion = this.sumarSemanas();
+
+        Duration diff = Duration.between(fechaInicio, fechaDevolucion);
+        System.out.println("Quedan " + diff + " dias para la devolucion!!");
     }
 }

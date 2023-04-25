@@ -1,5 +1,7 @@
 package Clase1804.Clases;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Biblioteca {
@@ -71,5 +73,11 @@ public class Biblioteca {
           }
        }
        System.out.println("Cantidad total de libros disponibles: " + this.contarLibrosDisponibles());
+    }
+
+    public void verFechaDevolucion(Fecha f){
+       LocalDate fechaIncial = LocalDate.parse(f.toString(), DateTimeFormatter.ISO_LOCAL_DATE);
+       
+
     }
 }
