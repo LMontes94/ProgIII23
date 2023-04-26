@@ -1,0 +1,30 @@
+@startuml
+
+title ** Archivo **
+
+Interface EstructuraDeDatos{
+   + nombre(): String 
+   + tamanio(): Integer 
+}
+
+class Directorio implements EstructuraDeDatos{
+    
+    - archivos: Hashset<Archivo>
+  
+    + agregarArchivo(EstructuraDeDatos) : void
+    + eliminarArchivo(EstructuraDeDatos): void
+    + obtenerTamanio(): Integer  
+}
+
+class Archivo implements EstructuraDeDatos{
+    
+    + Archivo(String,Integer): Constructor
+}
+
+class Link implements EstructuraDeDatos{
+    + conectarAEstructura(): void 
+}
+
+Directorio o-- Archivo 
+Directorio o-- Link 
+@enduml

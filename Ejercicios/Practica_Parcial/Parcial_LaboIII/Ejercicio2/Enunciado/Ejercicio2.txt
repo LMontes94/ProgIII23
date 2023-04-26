@@ -1,0 +1,20 @@
+Ejercicio 2
+Se desea implementar un sistema de archivos para un
+sistema operativo mediante el uso de objetos.
+Para ello, se tendrá en cuenta los siguientes elementos:
+● Archivos normales: se almacena su nombre y tamaño
+(Los mismos se definen al momento de creación del objeto).
+● Directorios se almacena su nombre, mientras que su tamaño
+será la suma de los tamaños de los ficheros que contiene.
+Los directorios se crean vacíos pero se les pueden añadir
+otros ficheros en cualquier momento.
+● Links: se almacena su nombre, pero su tamaño será en
+todo momento el tamaño del fichero, directorio o «link»
+al que están conectados.
+    Se pide:
+        1. Elabore un diagrama de clases correspondiente.
+        2. Codifique los métodos que permitan
+            a. Agregar archivos a un directorio
+            b. Eliminar archivos de un directorio
+            c. Obtener el tamaño de un directorio. 
+        Los links no incrementan el tamaño de un directorio.
