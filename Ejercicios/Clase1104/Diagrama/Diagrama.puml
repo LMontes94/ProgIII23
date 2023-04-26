@@ -2,68 +2,73 @@
 
 title ** ACME S.A.**
 
-Class micro{
-   - maxSentados 
-   - maxParados 
-   - volumen
-   - pasajero: <ArrayList>Empleado
+' Clases 
 
-   + getMaxSentados(): Integer  
-   + setMaxSentados(Integer): void
-   + getMaxParados(): Integer
-   + setMaxParados(Integer): void
-   + getVolumen(): Double
-   + setVolumen(Double): void
-   + getEmpleado(): Empleado
-   + setEmpleado(Empleado): void
+class Micro{
+   - cantAsientos : Integer 
+   - cantMaxParados: Integer 
+   - volumen: Double
+   - primerPasajero: Empleado
+   - pasajerosSentados: ArrayList<Empleado>
+   - pasajerosParados: ArrayList<Empleado>
 
-   + hayLugar(): boolean
-   + asientosLibres() : Integer
-   + espacioParado(): Integer  
+   / setters y getters
+   
+   + subis(): void
+   + subir(Empleado): void
+   + bajar(Empleado): void
+   + guardarPrimerPasajero(): Empleado
 
 }
 
-Class Empleado{
-    - nombre
-    - esJefe
-    
-    + getNombre(): String 
-    + setNombre(String): void
-    + setEsJefe(boolean): void
-    + esJefe(): boolean
-    + subirAlMicro(Micro): void
-    + bajarDelMicro(Micro): void
-}
+class Empleado{
+  - legajo: Integer 
+  - nombre: String 
+  - apellido: String 
+  - empleados : ArrayList<Empleados>
 
-Empleado <|-- Apurado
+  // setters y getters
+   + meSubo(): boolean    
+   + sosJefe(): boolean 
+} 
+
+
+
+'Relaciones
+
+Micro *-- Empleado
 Empleado <|-- Claustrofobico
-Empleado <|-- Fiaca
-Empleado <|-- Moderado
-Empleado <|-- Obsecuente
+Empleado <|-- Fiaca 
+Empleado <|-- Moderador
+Empleado <|-- Obsecuente 
+ 
+'Notas
 
-Class Apurado{
+note right of Micro::subir
+Resuelve el punto 2.
+Se le pasa por parametro el Empleado 
+y se fija si hay espacio en el micro y consulta
+al empleado si quiere subir, si es asi, sube.
+end note 
 
-}
+note left of Micro::bajar
+Resuelve el punto 3
+Busco El empleado del array y lo remuevo.
+end note 
 
-Class Claustrofobico{
-   + volumenMicroMas120(Micro): void
-}
+note right of Micro::guardarPrimerPasajero
+Este metodo resuelve el punto 4
+revisa el array pasajeros sentados y pasajeros Parados
+y si ambos estan nulos, me guardo este pasajero.
+end note 
+note right of Empleado::meSubo
+Este metodo ayuda a resolver el punto 2.
+end note 
 
-Class Fiaca{
-   + mePuedoSentar(Micro): void
-}
-
-Class Moderado{
-   - xLugaresLibres
-
-   + getXLigaresLibres(): Integer
-   + setXLugaresLibres(Integer): void
-}
-
-Class Obsecuente{
-
-}
-
+note left of Empleado::sosJefe 
+Este metodo resuelve el punto 1
+el cual se fija si en el arrayList esta null o no.
+end note 
 
 
 @enduml
