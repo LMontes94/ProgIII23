@@ -1,10 +1,20 @@
 package Ejercicios.Clase1104.Clases;
 
+import java.util.HashSet;
+
 public class Empleado {
     private String nombre;
     private String apellido;
     private String legajo;
-    private boolean esJefe;
+    private HashSet<Empleado> empleadosACargo;
+
+    public HashSet<Empleado> getEmpleadosACargo() {
+        return empleadosACargo;
+    }
+
+    public void setEmpleadosACargo(HashSet<Empleado> empleadosACargo) {
+        this.empleadosACargo = empleadosACargo;
+    }
 
     public String getNombre(){
         return nombre;
@@ -28,14 +38,6 @@ public class Empleado {
 
     public void setLegajo(String l){
         this.legajo = l;
-    }
-
-    public void esJefe(boolean esJefe){
-       this.esJefe = esJefe;
-    }
-    
-    public boolean esJefe(){
-        return esJefe;
     }
     
     public void subirAlMicro(Micro m){

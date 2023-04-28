@@ -1,11 +1,13 @@
 package Ejercicios.Clase1104.Clases;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Micro {
     private Integer totalAsientos;
     private Integer maxParados;
     private Double volumen;
+    private Empleado primerPasajero;
     private HashSet<Empleado> pasajeroSentados;
     private HashSet<Empleado> pasajerosParados;
     
@@ -13,8 +15,11 @@ public class Micro {
         this.totalAsientos = maxS;
         this.maxParados = maxP;
         this.volumen = v;
+        this.primerPasajero = new Empleado();
         this.pasajeroSentados = new HashSet<Empleado>();
         this.pasajerosParados = new HashSet<Empleado>();
+        this.pasajeroSentados = null;
+        this.pasajerosParados = null;
     }
 
     public Integer getTotalAsientos(){
@@ -41,29 +46,43 @@ public class Micro {
         this.volumen = v;
     }
     
-    public void inicarAsientos() {
-       
-        for(int i = 0; i < this.getTotalAsientos(); i++){
-           this.pasajeroSentados.add(null);
-        }
+    public Empleado getPrimerPasajero(){
+        return this.primerPasajero;
+    }
+
+    public HashSet<Empleado> getPasajerosSentados(){
+         return this.pasajeroSentados;
+    }
+
+    public HashSet<Empleado> getPasajerosParados(){
+        return this.pasajerosParados;
+    }
+    
+    public boolean estaVacio(){
+        return this.pasajeroSentados == null && this.pasajerosParados == null;
+    }
+    
+    public void guardarPrimerPasajero(Empleado p){
+        this.primerPasajero = p;
+    }
+    
+    public int lugarLibre(){
+
+    }
+
+    public int asientosLibres(){
+     
+    }
+
+    public int espaciosLibres(){
+       return this.asientosLibres() + this.lugarLibre();
     }
 
     public boolean hayLugar(){
-        if (this.asientosLibres() > 0 && this.espacioParado() > 0) {
-            return true;
-        }
-        return false;
+        return espaciosLibres() != 0;
     }
 
-    public Integer asientosLibres(){
-        Integer i = 0;
-        while (i < pasajeroSentados.size()){
-            i++;
-        }
-        return i;
-    }
 
-    public Integer espacioParado(){
-        return 0;
-    }
+
+
 }
