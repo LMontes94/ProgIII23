@@ -1,0 +1,34 @@
+Un centro de estudios universitarios desea realizar un sistema que permita gestionar la inscripción de sus alumnos e
+ingresantes a materias, cursos y charlas informativas. Se asume que un ingresante ya se encuentra inscripto a una
+determinada carrera. Para la solución asuma una única carrera.
+Para inscribirse a una materia, un alumno debe seleccionar la materia de un listado de materias disponibles. El centro
+universitario es el encargado de proporcionar dicho listado. Por su parte el centro universitario, al recibir la petición del
+alumno debe verificar que el mismo se pueda inscribir a la materia seleccionada. Para ello realiza las siguientes
+verificaciones:
+● Si el alumno es ingresante sólo verifica que todas las materias a las que se quiera inscribir correspondan al primer
+año de la carrera ya que las mismas no poseen correlativas y la CAR siempre se cumple.
+● Si el alumno no es ingresante se verifica que todas las materias correlativas estén aprobadas y cumpla la CAR.
+El centro universitario debe informar si la inscripción fue exitosa o no.
+Por otra parte, desde el centro universitario, nos informan que además de las carreras ofrecidas, también se brindan charlas
+informativas, gratuitas, y cursos (gratuitos y pagos) y desean que la solución permita a los alumnos inscribirse a los cursos y
+registrarse en las charlas mencionadas.
+Para registrarse en una charla, lo único que el centro universitario verifica es que no se supere el cupo disponible. El cupo
+disponible siempre es fijo e igual para cada charla. Si la charla es virtual, el cupo máximo es de 100 participantes, mientras
+que si la charla es presencial, el cupo máximo es de 80 participantes. Todas las charlas definen la fecha y hora de la misma.
+Las charlas virtuales además poseen el link para que los participantes se conecten, mientras que las presenciales poseen el
+número de aula donde se realizará la misma.
+Para inscribirse a un curso, el centro universitario verifica que no se supere el cupo disponible, establecido por el docente a
+cargo del curso.
+Los cursos pueden confeccionar y otorgar certificado de asistencia y de aprobación, mientras que las charlas sólo entregan
+certificado de asistencia.
+De cada alumno se registra su nombre y apellido, legajo, materias aprobadas y CAR (condición de alumno regular).
+De cada materia se sabe su código, nombre, año de la carrera y materias correlativas inmediatas.
+Ejemplo de correlativas inmediatas:
+
+El listado de materias correlativas de Mx sólo está formado
+por [My, Mz]
+
+Se pide:
+a. Diagrama de clases de la solución. Debe incluir todos los métodos y atributos.
+b. Codificar y demostrar el uso de los métodos que permitan al centro universitario inscribir una persona a una
+materia, curso o charla informativa.
