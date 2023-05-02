@@ -1,0 +1,25 @@
+Una empresa que organiza eventos ofrece una comida como
+parte de cada evento.
+Cada evento tiene un menú único, que incluye entrada y
+plato principal; algunos menúes incluyen postre mientras
+que otros no. La empresa trabaja con varias cocinas, que
+tienen capacidad de producción limitada de distintos
+platos. P.ej. una cocina puede tener una capacidad de
+producción de 50 porciones de milanesas, 25 porciones de
+ensalada mixta, y 180 porciones de flan. Siempre la
+capacidad se mide en porciones por día. También trabaja
+con casas de comida rápida (McDonalds y similares),
+que de los platos que prepara tiene capacidad de
+producción infinita.
+Generar el diagrama de clases y código para poder
+determinar:
+si una cocina (o casa de comidas rápidas) puede o no 
+preparar un menú completo, o sea si tiene
+capacidad de producción > 0 para cada uno de sus platos.
+dado un evento (que se define por menú y cantidad de
+gente) qué puede proveer una cocina (o casa
+de comidas rápidas), en platos y cantidad de porciones de
+cada plato, en un día.
+dado un evento, armar alguna forma de conseguir en un día
+todos los platos necesarios combinando entre un conjunto
+de cocinas y/o casas de comida rápida.

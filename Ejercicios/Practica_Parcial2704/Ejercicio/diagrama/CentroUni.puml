@@ -4,5 +4,93 @@ title ** Centro Universitario **
 
 'Clases 
 
+ class CentroUniversitario{
+    + inscripcion(Alumno,Inscripcion): void 
+ }
 
+ class Alumno{
+    - nombre: String 
+    - apellido: String 
+    - legajo: String
+    - materiasAprobadas: ArrayList<Materia> 
+    - car: boolean
+ }
+
+class Docente{
+  
+}
+
+ class Materia{
+   - codigo: Integer 
+   - nombre: String 
+   - anioCarrera: Integer 
+   - materiasCorrelativas: ArrayList<Materia>
+ }
+
+ class Curso{
+    - docente: Docente 
+
+ }
+
+class CursoPago{
+    - precio: Double 
+}
+
+ abstract class CharlaInformativa{
+    - tipoDeCharla: String
+    + {abstract}informacionCursada(): void
+ }
+
+class Virtual{
+   - MAX_CUPOS: 100
+   - nroAula: Integer 
+}
+
+class Presencial{
+   - MAX_CUPOS : 80
+   - link: String
+}
+ 'Interfaces 
+
+ interface Inscripcion{
+    + inscripcion(Alumno, Inscripcion): void
+ }
+
+ interface Certificacion{
+    + certificadoAsistencia(): void
+    + certificadoAprobacion(): void 
+ }
+
+ interface Cupos{
+     + cuposMaximos(): Integer
+ }
+
+ 'Relaciones 
+ CentroUniversitario *-- Alumno
+ CentroUniversitario *-- Inscripcion
+
+ Inscripcion <|-- Materia
+ Inscripcion <|-- CharlaInformativa 
+ Inscripcion <|-- Curso 
+
+ Alumno *-- Materia
+ Materia *-- Materia 
+
+CharlaInformativa <|-- Virtual
+CharlaInformativa <|-- Presencial 
+Cupos <|-- CharlaInformativa
+Certificacion <|-- CharlaInformativa 
+Certificacion <|-- Curso
+
+Curso *-- Docente
+Cupos <|-- Docente
+
+Curso <|-- CursoPago
+
+'Notas 
+
+note left of CentroUniversitario::inscripcion
+ Debe tener 3 excepciones una por cada
+ tipo de Inscripcion.
+end note 
 @enduml

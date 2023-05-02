@@ -1,14 +1,11 @@
 package Practica_Parcial.Parcial_LaboIII.Ejercicio2.src.Clases;
 
-public class Archivo {
+public class Archivo implements TipoDato{
     private String nombre;
     private Integer tamanio;
 
-    public void setTamanio(Integer t){
-       this.tamanio = t;
-    }
-    public Integer getTamanio() {
-        return tamanio;
+    public void setTamanio(Integer tamanio) {
+        this.tamanio = tamanio;
     }
 
     public String getNombre() {
@@ -17,5 +14,10 @@ public class Archivo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public Integer tamanio() {
+        return this.tamanio;
     }
 }

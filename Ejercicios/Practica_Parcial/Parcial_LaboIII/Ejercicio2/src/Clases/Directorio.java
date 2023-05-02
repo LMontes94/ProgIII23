@@ -1,35 +1,12 @@
 package Practica_Parcial.Parcial_LaboIII.Ejercicio2.src.Clases;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
-public class Directorio {
+import Practica_Parcial.Parcial_LaboIII.Ejercicio2.src.Exception.DirectorioVacioException;
+
+public class Directorio implements TipoDato {
     private String nombre;
-    private Integer tamanio;
-    private HashSet<Archivo> archivos;
-    private Link link;
-    
-    public Directorio(){
-        this.nombre = "";
-        this.tamanio = 0;
-        this.archivos = new HashSet<Archivo>();
-        this.link = new Link();
-    }
-    
-    public Link getLink() {
-        return link;
-    }
-
-    public void setLink(Link link) {
-        this.link = link;
-    }
-
-    public HashSet<Archivo> getArchivos() {
-        return archivos;
-    }
-
-    public Integer getTamanio() {
-        return tamanio;
-    }
+    private ArrayList<TipoDato> archivos;
 
     public String getNombre() {
         return nombre;
@@ -39,23 +16,33 @@ public class Directorio {
         this.nombre = nombre;
     }
 
-    public void agregarArchivo(Archivo a){
-       this.archivos.add(a);
+    public Directorio() {
+        this.archivos = new ArrayList<TipoDato>();
+        this.archivos = null;
     }
 
-    public void eliminarArchivo(Archivo a){
-       if(this.archivos.contains(a)){
-          this.archivos.remove(a);
-       }else{
-        System.out.println("Archivo no existe en este directorio");
-       }
-        // Crear runtimeException noSeEncuentraArchivo y usar un bloque try catch
+    @Override
+    public Integer tamanio() {
+        Integer t = 0;
+        if (this.archivos != null) {
+            for (TipoDato tipoDato : archivos) {
+                t = t + tipoDato.tamanio();
+            }
+            return t;
+        }
+        return t;
     }
 
-    public void obtenerTamanio(){
-       
-        for (Archivo archivo : archivos) {
-            this.tamanio = this.tamanio + archivo.getTamanio();
+    public void agregarArchivo(TipoDato d) {
+        this.archivos.add(d);
+    }
+
+    public void eliminarArchivo(TipoDato d) throws DirectorioVacioException {
+        if (this.archivos != null) {
+            this.archivos.remove(d);
+        } else {
+            throw new DirectorioVacioException(".");
         }
     }
+
 }

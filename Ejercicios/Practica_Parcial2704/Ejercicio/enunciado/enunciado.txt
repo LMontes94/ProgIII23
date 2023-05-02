@@ -2,8 +2,8 @@ Un centro de estudios universitarios desea realizar un sistema que permita gesti
 ingresantes a materias, cursos y charlas informativas. Se asume que un ingresante ya se encuentra inscripto a una
 determinada carrera. Para la solución asuma una única carrera.
 Para inscribirse a una materia, un alumno debe seleccionar la materia de un listado de materias disponibles. El centro
-universitario es el encargado de proporcionar dicho listado. Por su parte el centro universitario, al recibir la petición del
-alumno debe verificar que el mismo se pueda inscribir a la materia seleccionada. Para ello realiza las siguientes
+universitario es el encargado de proporcionar dicho listado. Por su parte el centro universitario, al recibir la petición
+del alumno debe verificar que el mismo se pueda inscribir a la materia seleccionada. Para ello realiza las siguientes
 verificaciones:
 ● Si el alumno es ingresante sólo verifica que todas las materias a las que se quiera inscribir correspondan al primer
 año de la carrera ya que las mismas no poseen correlativas y la CAR siempre se cumple.

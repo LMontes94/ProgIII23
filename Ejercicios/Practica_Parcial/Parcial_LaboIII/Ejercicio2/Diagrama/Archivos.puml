@@ -2,29 +2,33 @@
 
 title ** Archivo **
 
-Interface EstructuraDeDatos{
-   + nombre(): String 
-   + tamanio(): Integer 
+'Clases 
+interface TipoDato{   
+   - nombre: String 
+
+   + {abstract}tamanio(): Integer 
 }
 
-class Directorio implements EstructuraDeDatos{
-    
-    - archivos: Hashset<Archivo>
-  
-    + agregarArchivo(EstructuraDeDatos) : void
-    + eliminarArchivo(EstructuraDeDatos): void
-    + obtenerTamanio(): Integer  
+class Archivo{
+  - nombre: String 
 }
 
-class Archivo implements EstructuraDeDatos{
-    
-    + Archivo(String,Integer): Constructor
+class Directorio{
+   - nombre: String 
+   - archivos: ArrayList<TipoDato>
+   + agregarArchivo(TipoDato): void 
+   + eliminarArchivo(TipoDato): void
 }
 
-class Link implements EstructuraDeDatos{
-    + conectarAEstructura(): void 
+class Link{
+   - nombre: String 
+   + conectar(TipoDato): void
 }
 
-Directorio o-- Archivo 
-Directorio o-- Link 
+'Relaciones 
+
+TipoDato <|-- Archivo 
+TipoDato <|-- Directorio 
+TipoDato <|-- Link 
+
 @enduml
