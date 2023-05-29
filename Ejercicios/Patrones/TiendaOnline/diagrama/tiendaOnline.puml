@@ -1,0 +1,59 @@
+@startuml
+
+title ** Tienda Online **
+
+package "Abstract Factory" #DDDDDD {
+   'Clases'
+   interface abstractFactory{
+     + createWebcam()
+     + createHeadset()
+     + createTeclado()
+     + createMouse()
+   }
+   
+   
+   interface webcam{}
+   interface headset{}
+   interface teclado{}
+   interface mouse{}
+
+
+    'Relaciones'
+
+   abstractFactory <|.. createFactoryStarter
+   abstractFactory <|.. createFactoryPlatinum
+   abstractFactory <|.. createFactoryGold
+
+   createFactoryStarter o-- webcamStarter
+   createFactoryStarter o-- headsetStarter
+   createFactoryStarter o-- tecladoStarter 
+   createFactoryStarter o-- mouseStarter 
+
+   createFactoryPlatinum o-- webcamPlatinum
+   createFactoryPlatinum o-- headsetPlatinum
+   createFactoryPlatinum o-- tecladoPlatinum 
+   createFactoryPlatinum o-- mousePlatinum 
+
+   createFactoryGold o-- webcamGold
+   createFactoryGold o-- headsetGold
+   createFactoryGold o-- tecladoGold 
+   createFactoryGold o-- mouseGold
+
+   webcam <|.. webcamStarter
+   webcam <|.. webcamPlatinum
+   webcam <|.. webcamGold
+
+   headset <|.. headsetStarter
+   headset <|.. headsetPlatinum
+   headset <|.. headsetGold
+
+   teclado <|.. tecladoStarter
+   teclado <|.. tecladoPlatinum
+   teclado <|.. tecladoGold
+   
+   mouse <|.. mouseStarter
+   mouse <|.. mousePlatinum
+   mouse <|.. mouseGold
+}
+
+@enduml
