@@ -90,5 +90,5 @@ package Builder {
 
   sensorTemperatura <|-- celsiusSensorTemperatura
   sensorTemperatura <|-- temperaturaAdapter
-  temperaturaAdapter <|-- farenheitSensorTemperatura
+  temperaturaAdapter o--> farenheitSensorTemperatura
 @enduml
