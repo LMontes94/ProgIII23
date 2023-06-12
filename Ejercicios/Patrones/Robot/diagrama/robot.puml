@@ -1,0 +1,77 @@
+@startuml
+
+title ** Robot **
+
+package Builder {
+  class Robot{
+     - POTENCIA_BASE: 10
+     - nroSerie: Integer 
+     - traccion: Traccion
+     - resistencia: Integer 
+     - arma: Arma
+
+     + setters and getters()
+  }
+  
+  abstract class BuilderRobot{
+     # robot : Robot 
+     + crearNuevoRobot() : void 
+     + getRobot(): Robot
+     + buildArma(): void  
+     + buildTraccion(): void 
+  }
+
+  class FabricaDirector{
+    - builderRobot : BuilderRobot
+    + setBuilderRobot(): void
+    + getRobot(): Robot
+    + contruirRobot(): void 
+  }
+
+  interface Arma{
+     + calcularDanio(robot: Robot()) : Integer
+  }
+  
+  class Granada{}
+  class RayoLaser{}
+  class Espada{}
+  
+  interface Traccion{
+    + deterioroDePropulsion(robot : Robot())
+  }
+
+  class Oruga{}
+  class RuedaCaucho{}
+
+  class OrugaGranadaBuilder{}
+  class OrugaRayoLaserBuilder{}
+  class OrugaEspadaBuilder{}
+  class RuedaGranadaBuilder{}
+  class RuedaRayoLaserBuilder{}
+  class RuegaEspadaBuilder{}
+
+  class sensorTemperatura{}
+}
+'Relaciones
+
+  Robot -r-o BuilderRobot
+  BuilderRobot -r-o FabricaDirector
+
+  Robot *-d- Arma
+  Arma <|-- Granada
+  Arma <|-- RayoLaser
+  Arma <|-- Espada
+  
+  Robot *-l- Traccion
+  Traccion <|-- Oruga
+  Traccion <|-- RuedaCaucho 
+
+  BuilderRobot <|-- OrugaGranadaBuilder
+  BuilderRobot <|-- OrugaRayoLaserBuilder
+  BuilderRobot <|-- OrugaEspadaBuilder
+  BuilderRobot <|-- RuedaGranadaBuilder
+  BuilderRobot <|-- RuedaRayoLaserBuilder
+  BuilderRobot <|-- RuegaEspadaBuilder
+
+  Oruga o-- sensorTemperatura
+@enduml
