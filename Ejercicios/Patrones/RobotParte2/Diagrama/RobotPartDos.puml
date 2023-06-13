@@ -91,4 +91,25 @@ package Builder {
   sensorTemperatura <|-- celsiusSensorTemperatura
   sensorTemperatura <|-- temperaturaAdapter
   temperaturaAdapter o--> farenheitSensorTemperatura
+
+note as N1
+  ** Estrategia **
+    . Como el planteo no especifica si un robot puede tener 
+      un arma o muchas. Asumo que tiene una sola.
+    . Aplico el patron de diseño Builder
+    . De BuilderRobot voy a tener 6 clases que implementan esta interfaz 
+      2 tipos de traccion * 3 tipos de armas, ahi se hacen todas las combinaciones 
+      posibles.
+    . Para solucionar el tema de los nuevos sensores que leen 
+      las temperaturas en Farenheit, aplico el patron de diseño Adapter 
+      En donde temperaturaAdapter hago el calculo y el paso de grados Farenheit 
+      a grados Celcius, para asi poder mostrar la temperatura del nuevo sensor
+end note
+
+note as N2
+  ** Estrategia 2 **
+   . En caso que haya que asumir que el robot puede tener varias armas
+   . El robot pasa a tener un ArrayList de armas y de seis concreteBuilder 
+     se tendrian solo 2 por los tipos de traccion.
+end note 
 @enduml

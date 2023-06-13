@@ -1,7 +1,7 @@
 package Ejercicios.Patrones.Robot.clases.builder;
 
 public abstract class BuilderRobot {
-    private Robot robot;
+    protected Robot robot;
 
     public void crearNuevoRobot() {
         this.robot = new Robot();
