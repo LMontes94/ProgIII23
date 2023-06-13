@@ -1,0 +1,46 @@
+@startuml
+
+title ** Centro Medico ** 
+
+package Composite{
+    'Componente
+    interface BaseSanitaria{
+       + getNombre()
+       + tiempoMedioAsistencia()
+       + getDireccion()
+    }
+
+    interface BaseConAmbulancia{
+        + ambulanciasDisponibles()
+    }
+
+    class BaseSimple{}
+    class Hospital{}
+    class BaseCompuesta{
+        - nombre : String  
+        - direccion : String 
+        - bases : ArrayList<BaseSanitaria>
+
+        + agregarBase(baseSanitaria : BaseSanitaria): void
+        + eliminarBase(baseSanitaria: BaseSanitaria): void
+        + getBases() : BaseSanitaria
+    }
+
+
+}
+
+'Relaciones 
+BaseSanitaria <|-- BaseConAmbulancia 
+BaseSanitaria <|-- BaseSimple 
+BaseConAmbulancia <|-- Hospital
+
+BaseSanitaria <-r-o BaseCompuesta
+
+note as N1
+  *Estrategia*
+    . Utilizo el patron Composite, donde la interface
+      BaseSanitaria es el componente, la interface baseConAmbulancia
+      y la clase BaseSimple serian las hojas y la clase composite es
+      la BaseCompuesta.
+end note 
+@enduml
