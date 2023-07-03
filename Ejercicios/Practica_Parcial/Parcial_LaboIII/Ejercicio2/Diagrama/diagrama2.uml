@@ -1,0 +1,33 @@
+@startuml
+
+class FileSystemObject {
+    +name: string
+    +size: int
+    +FileSystemObject(name: string, size: int)
+    +getSize(): int
+    +getName(): string
+}
+
+class File {
+    +File(name: string, size: int)
+}
+
+class Directory {
+    -contents: List<FileSystemObject>
+    +Directory(name: string)
+    +addObject(obj: FileSystemObject): void
+    +removeObject(obj: FileSystemObject): void
+    +getSize(): int
+}
+
+class Link {
+    +target: FileSystemObject
+    +Link(name: string, target: FileSystemObject)
+    +getSize(): int
+}
+
+FileSystemObject --|> File
+FileSystemObject --|> Directory
+FileSystemObject --|> Link
+
+@enduml

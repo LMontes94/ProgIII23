@@ -1,0 +1,45 @@
+@startuml
+
+class Proceso {
+  - nombre: String
+  - prioridad: int
+  - tiempoEjecucion: int
+  + Proceso(nombre: String, prioridad: int, tiempoEjecucion: int)
+  + getNombre(): String
+  + getPrioridad(): int
+  + getTiempoEjecucion(): int
+}
+
+abstract class SistemaOperativo {
+  - colaProcesos: Queue<Proceso>
+  - algoritmoEjecucion: AlgoritmoEjecucion
+  + agregarProceso(proceso: Proceso): void
+  + eliminarProceso(proceso: Proceso): void
+  + obtenerCicloFinalizacionProcesos(): Map<Proceso, int>
+  + cambiarAlgoritmoEjecucion(algoritmo: AlgoritmoEjecucion): void
+}
+
+interface AlgoritmoEjecucion {
+  + ejecutarProceso(colaProcesos: Queue<Proceso>): Proceso
+}
+
+class ModoAlternado {
+  + ejecutarProceso(colaProcesos: Queue<Proceso>): Proceso
+}
+
+class ModoSecuencial {
+  + ejecutarProceso(colaProcesos: Queue<Proceso>): Proceso
+}
+
+class ModoPrioritario {
+  + ejecutarProceso(colaProcesos: Queue<Proceso>): Proceso
+}
+
+Proceso "1" --* "1" SistemaOperativo : contiene
+SistemaOperativo "1" -- "1" AlgoritmoEjecucion : usa
+
+ModoAlternado ..|> AlgoritmoEjecucion
+ModoSecuencial ..|> AlgoritmoEjecucion
+ModoPrioritario ..|> AlgoritmoEjecucion
+
+@enduml

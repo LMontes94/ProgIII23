@@ -1,0 +1,44 @@
+@startuml
+
+title ** Muebleria
+class Mueble {
+  - alto: int
+  - largo: int
+  - ancho: int
+  - color: string
+  - precio: float
+  + calcularPrecio(): float
+}
+
+class Silla {
+  - tapizada: bool
+  - materialTapizado: string
+  + calcularPrecio(): float
+}
+
+class Mesa {
+  - patas: int
+  - materialTabla: string
+  - forma: string
+  + calcularPrecio(): float
+}
+
+class Sillon {
+  - materialTapizado: string
+  + calcularPrecio(): float
+}
+
+class Combo {
+  - nombre: string
+  - descuento: float
+  - muebles: List<Mueble>
+  + agregarMueble(mueble: Mueble)
+  + calcularPrecio(): float
+}
+
+Mueble --|> Combo
+Silla --|> Mueble
+Mesa --|> Mueble
+Sillon --|> Mueble
+
+@enduml
